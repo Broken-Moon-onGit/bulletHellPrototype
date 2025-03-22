@@ -24,9 +24,8 @@ public class enemyBulletAimed : MonoBehaviour
         Destroy(GetComponent<Rigidbody2D>());
     }
 
-    void Awake()
+    void Start()
     {
-        //bulletAimer = GetComponent<enemyBulletAimer>();
         enemyBullet = GetComponent<Rigidbody2D>();
         _player = FindObjectOfType<playerMovement>().transform;
         bulletSpeed = 5;
@@ -41,14 +40,16 @@ public class enemyBulletAimed : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            gameObject.SetActive(false);
             Destroy(GetComponent<BoxCollider2D>());
             Debug.Log("Bullet!");
             return;
         }
         if (collision.gameObject.tag == "destroyer")
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            gameObject.SetActive(false);
             Destroy(GetComponent<BoxCollider>());
             Debug.Log("Bullet Removed");
             return;

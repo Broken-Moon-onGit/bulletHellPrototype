@@ -7,6 +7,7 @@ public class enemyLogic_popcornShooter : MonoBehaviour
     [SerializeField] basicEnemyStats enemyStats; //call enemy stats script
     [SerializeField] bulletPatterns bulletPattern;
     [SerializeField] GameObject enemyBullet;
+    GameObject BulletPatternLibrary;
 
 
     [SerializeField] float lifetime = 5;
@@ -32,7 +33,8 @@ public class enemyLogic_popcornShooter : MonoBehaviour
     void Awake()
     {
         enemyStats = GetComponent<basicEnemyStats>();
-        bulletPattern = GetComponent<bulletPatterns>();
+        BulletPatternLibrary = GameObject.FindWithTag("patternLib");
+        bulletPattern = BulletPatternLibrary.GetComponent<bulletPatterns>();
         Debug.Log(bulletPattern);
 
         _player = FindObjectOfType<playerMovement>().transform;

@@ -183,7 +183,7 @@ MonoBehaviour:
       spawnOffset: {x: -2, y: 0, z: 0}
     waveRepeat: 1
     repeatCooldown: 2
-    waveDelay: 1
+    waveDelay: 0.5
   - wavePattern:
     - hazardEnemy: {fileID: 4902406163830880490, guid: fd0de63a3ddaf8b41aec2840ee9e0089, type: 3}
       spawnCount: 1
@@ -207,7 +207,7 @@ MonoBehaviour:
       spawnOffset: {x: -2, y: 0, z: 0}
     waveRepeat: 1
     repeatCooldown: 2
-    waveDelay: 1
+    waveDelay: 0.5
   - wavePattern:
     - hazardEnemy: {fileID: 3974667548889715319, guid: 2cce2c1364f2afd4295a2d9d291e868a, type: 3}
       spawnCount: 1
@@ -223,8 +223,8 @@ MonoBehaviour:
       spawnOffset: {x: 2.5, y: 0, z: 0}
     waveRepeat: 1
     repeatCooldown: 2
-    waveDelay: 1
-  startSpawnDelay: 1.5
+    waveDelay: 0.5
+  startSpawnDelay: 0.5
 --- !u!1001 &172739806
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1267,7 +1267,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27acd6becbcdb114ba97b5d7836eda3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyBullet: {fileID: 0}
 --- !u!4 &1482671137
 Transform:
   m_ObjectHideFlags: 0
@@ -1296,8 +1295,53 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aim: {x: 0, y: 0}
-  enemyBullet: {fileID: 0}
+  enemyBullet: {fileID: 8850037678187834077, guid: bd86580e8ed0066458d23463b513fd3e, type: 3}
   bulletSpeed: 0
+--- !u!1 &1509652571
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1509652573}
+  - component: {fileID: 1509652572}
+  m_Layer: 0
+  m_Name: enemyBulletPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1509652572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509652571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 932541eb7c4e81749ae53dab06e7b53e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyBullet: {fileID: 6242520752784740643, guid: bd86580e8ed0066458d23463b513fd3e, type: 3}
+--- !u!4 &1509652573
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509652571}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1510995106
 GameObject:
   m_ObjectHideFlags: 0
@@ -1788,6 +1832,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 1918899054}
   - {fileID: 1414439456}
+  - {fileID: 1509652573}
   - {fileID: 1482671137}
   - {fileID: 519420032}
   - {fileID: 80841574}

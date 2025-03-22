@@ -7,20 +7,24 @@ public class bulletPatterns : MonoBehaviour
     Transform _player;
 
     enemyBulletAimed bulletAim;
-    [SerializeField] GameObject enemyBullet;
+    GameObject enemyBullet;
 
     // Start is called before the first frame update
     void Awake()
     {
         _player = FindObjectOfType<playerMovement>().transform;
-        bulletAim = GetComponent<enemyBulletAimed>();       
+        bulletAim = GetComponent<enemyBulletAimed>();
     }
 
     public void BasicAimedShot()
     {
         for (int i = 0; i < 1; i++)
         {
-            GameObject bullet = Instantiate(enemyBullet, transform);
+            GameObject bullet = enemyBulletPool.instance.GetPooledObject();
+            if (bullet != null)
+            {
+                bullet.transform.position = gameObject.transform.position;
+            }
             Rigidbody2D bulletRB = bullet.GetComponent<Rigidbody2D>();
             bullet.transform.up = _player.transform.position - bullet.transform.position;
             transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
@@ -32,7 +36,11 @@ public class bulletPatterns : MonoBehaviour
     {
         for (int i = 0; i < 3; i++)
         {
-            GameObject bullet = Instantiate(enemyBullet, transform);
+            GameObject bullet = enemyBulletPool.instance.GetPooledObject();
+            if (bullet != null)
+            {
+                bullet.transform.position = gameObject.transform.position;
+            }
             Rigidbody2D bulletRB = bullet.GetComponent<Rigidbody2D>();
             bullet.transform.up = _player.transform.position - bullet.transform.position;
             transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z + 10 * (i - 1));
@@ -44,7 +52,11 @@ public class bulletPatterns : MonoBehaviour
     {
         for (int i = 0; i < 16; i++)
         {
-            GameObject bullet = Instantiate(enemyBullet, transform);
+            GameObject bullet = enemyBulletPool.instance.GetPooledObject();
+            if (bullet != null)
+            {
+                bullet.transform.position = gameObject.transform.position;
+            }
             Rigidbody2D bulletRB = bullet.GetComponent<Rigidbody2D>();
             bullet.transform.up = _player.transform.position - bullet.transform.position;
             transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z + 22.5f * i);
@@ -56,7 +68,11 @@ public class bulletPatterns : MonoBehaviour
     {
         for (int i = 0; i < 16; i++)
         {
-            GameObject bullet = Instantiate(enemyBullet, transform);
+            GameObject bullet = enemyBulletPool.instance.GetPooledObject();
+            if (bullet != null)
+            {
+                bullet.transform.position = gameObject.transform.position;
+            }
             Rigidbody2D bulletRB = bullet.GetComponent<Rigidbody2D>();
             bullet.transform.up = Vector3.up;
             transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z + 22.5f * i);

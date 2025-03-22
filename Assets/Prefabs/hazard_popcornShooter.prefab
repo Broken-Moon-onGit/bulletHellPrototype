@@ -209,8 +209,7 @@ GameObject:
   - component: {fileID: 3345378975532015688}
   - component: {fileID: 5950654243607730091}
   - component: {fileID: 8404072315298433730}
-  - component: {fileID: 2076416756049123764}
-  - component: {fileID: 4699556934815258540}
+  - component: {fileID: 8792314551322112885}
   m_Layer: 0
   m_Name: hazard_popcornShooter
   m_TagString: hazard
@@ -319,20 +318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalKillValue: 0
   enemyStats: {fileID: 5950654243607730091}
---- !u!114 &2076416756049123764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3974667548889715319}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27acd6becbcdb114ba97b5d7836eda3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyBullet: {fileID: 6242520752784740643, guid: bd86580e8ed0066458d23463b513fd3e, type: 3}
---- !u!114 &4699556934815258540
+--- !u!114 &8792314551322112885
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
